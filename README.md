@@ -1,73 +1,55 @@
-# React + TypeScript + Vite
+# 📞 Sistema Call Center Universitario – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend del **Sistema Call Center Universitario**, desarrollado con **React + TypeScript**, orientado a la gestión y seguimiento de contactos estudiantiles, análisis de resultados y apoyo al área de Marketing.
 
-Currently, two official plugins are available:
+Este sistema permite:
+- Registrar y consultar contactos de estudiantes
+- Visualizar métricas y estadísticas en un panel de control
+- Analizar resultados mediante gráficas
+- Integrarse con un backend REST (ASP.NET Core)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Tecnologías utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- ⚛️ **React**
+- 🟦 **TypeScript**
+- ⚡ **Vite**
+- 🎨 **CSS moderno (Glassmorphism / Dark UI)**
+- 📊 **Chart.js**
+- 🔗 **Axios**
+- 🧭 **React Router DOM**
 
-## Expanding the ESLint configuration
+---
+<img width="2560" height="1266" alt="image" src="https://github.com/user-attachments/assets/b4444da3-32d4-4ebf-abf1-782dc8a56222" />
+<img width="2548" height="1267" alt="image" src="https://github.com/user-attachments/assets/c92447d0-1fc7-4498-9a43-29e6362124e4" />
+<img width="2554" height="963" alt="image" src="https://github.com/user-attachments/assets/a5c4bf3a-0918-4afe-bb1b-15f551b62d0f" />
+<img width="2559" height="912" alt="image" src="https://github.com/user-attachments/assets/5222a629-d826-455d-ada0-564a8cdb2050" />
+<img width="2538" height="1194" alt="image" src="https://github.com/user-attachments/assets/536a3948-94b4-4a26-a0fd-f649ae7f9042" />
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📂 Estructura del proyecto
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+```bash
+src/
+│── pages/
+│   ├── Home.tsx
+│   ├── CallCenter.tsx
+│   ├── Dashboard.tsx
+│   ├── Marketing.tsx
+│   └── Registro.tsx
+│
+│── services/
+│   ├── callCenterService.ts
+│   └── dashboardService.ts
+│
+│── styles/
+│   ├── home.css
+│   ├── callcenter.css
+│   ├── dashboard.css
+│   ├── marketing.css
+│   └── registro.css
+│
+│── App.tsx
+│── main.tsx
+│── index.css
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
